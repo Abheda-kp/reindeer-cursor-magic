@@ -9,24 +9,19 @@ const Hero = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            The best way to manage{" "}
-            <span className="bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">
-              databases with AI
-            </span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight max-w-3xl mx-auto">
+            Built to make you extraordinarily productive, Reindeer is the best way to manage databases with AI.
           </h1>
-          
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            AI-powered database management that understands your queries and helps you work faster than ever before.
-          </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-            <Button variant="hero" size="lg" className="group">
+            <Button 
+              variant="hero" 
+              size="lg" 
+              className="group"
+              onClick={() => window.location.href = '/download'}
+            >
               <Download className="mr-2 h-5 w-5 group-hover:animate-pulse" />
               Download for Linux
-            </Button>
-            <Button variant="ghost" size="lg">
-              Try in Browser
             </Button>
           </div>
         </div>
