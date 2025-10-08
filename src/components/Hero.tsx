@@ -10,11 +10,10 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Built to make you extraordinarily productive,{" "}
+            The best way to manage{" "}
             <span className="bg-gradient-to-r from-accent to-purple-400 bg-clip-text text-transparent">
-              Reindeer
-            </span>{" "}
-            is the best way to manage databases with AI.
+              databases with AI
+            </span>
           </h1>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
