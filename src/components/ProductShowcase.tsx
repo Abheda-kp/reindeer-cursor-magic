@@ -1,8 +1,8 @@
-import reindeerInterface from "@/assets/reindeer-interface.png";
+import reindeerInterface from "@/assets/image/reindeer-interface.png";
 
 const ProductShowcase = () => {
   return (
-    <section className="py-20 relative">
+    <section className="relative">
       <div className="container mx-auto px-6">
         <div className="relative max-w-6xl mx-auto">
           <div className="absolute inset-0 bg-gradient-to-r from-accent/20 to-purple-500/20 blur-3xl -z-10" />

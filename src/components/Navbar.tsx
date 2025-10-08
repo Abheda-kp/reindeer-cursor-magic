@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import reindeerLogo from "@/assets/reindeer-logo.png";
+import reindeerLogo from "@/assets/image/reindeer-logo.png";
 
 const Navbar = () => {
   return (
@@ -15,7 +15,7 @@ const Navbar = () => {
             <Button variant="ghost" size="sm">
               Sign in
             </Button>
-            <Button variant="hero" size="sm">
+            <Button variant="hero" size="sm"  onClick={() => (window.location.href = "/download")}>
               Download
             </Button>
           </div>

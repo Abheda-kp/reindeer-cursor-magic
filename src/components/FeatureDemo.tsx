@@ -1,54 +1,57 @@
-import { Button } from "@/components/ui/button";
+import React from "react";
+import FixWithAI from "@/assets/videos/fix-with-ai.mp4";
 
 const featureDemos = [
   {
-    title: "AI-powered query suggestions",
-    description: "Write SQL naturally and let AI suggest optimizations and improvements to your queries with striking speed and precision.",
-    videoPlaceholder: "database-queries.mp4"
+    title: "AI-powered query autocomplete",
+    description:
+      "Get real-time SQL suggestions as you type, making queries faster and error-free.",
+    videoSrc: FixWithAI,
   },
   {
     title: "Real-time collaboration",
-    description: "Work together with your team in real-time. See changes as they happen and collaborate on complex database operations seamlessly.",
-    videoPlaceholder: "collaboration.mp4"
+    description:
+      "Work together with your team in real-time. See changes as they happen and collaborate on complex database operations seamlessly.",
+    videoSrc: FixWithAI,
   },
   {
     title: "Intelligent schema design",
-    description: "Design and visualize your database schema with AI assistance. Get recommendations for indexes, relationships, and optimizations.",
-    videoPlaceholder: "schema-design.mp4"
-  }
+    description:
+      "Design and visualize your database schema with AI assistance. Get recommendations for indexes, relationships, and optimizations.",
+    videoSrc: FixWithAI,
+  },
 ];
 
 const FeatureDemo = () => {
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-6">
+    <section className="py-24 bg-background">
+        <div className="container mx-auto px-6">
+        <div className="text-4xl flex items-center mb-5">Features</div>
         {featureDemos.map((feature, index) => (
-          <div 
+          <div
             key={index}
-            className={`grid md:grid-cols-2 gap-12 items-center mb-32 last:mb-0 ${
-              index % 2 === 1 ? 'md:grid-flow-dense' : ''
-            }`}
+            className="grid md:grid-cols-2 gap-16 items-center mb-32 last:mb-0 bg-[#1b1a13] p-2"
           >
-            <div className={index % 2 === 1 ? 'md:col-start-2' : ''}>
-              <div className="relative rounded-2xl overflow-hidden border border-border bg-card shadow-2xl aspect-video">
-                {/* Placeholder video - using a gradient background with animated elements */}
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-purple-500/20 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-accent/30 animate-pulse" />
-                    <p className="text-muted-foreground text-sm">Demo Video: {feature.videoPlaceholder}</p>
-                  </div>
-                </div>
-              </div>
+            {/* Video/Demo - Always on Left */}
+            <div className="relative rounded-2xl overflow-hidden border border-border bg-card shadow-2xl aspect-video p-2">
+              <video
+                src={feature.videoSrc}
+                autoPlay
+                loop
+                muted
+                controls={false}
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div className={index % 2 === 1 ? 'md:col-start-1 md:row-start-1' : ''}>
-              <h2 className="text-4xl font-bold mb-6">{feature.title}</h2>
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+            {/* Description - Always on Right */}
+            <div>
+              <h2 className="text-xl md:text-2xl font-bold mb-6">
+                {feature.title}
+              </h2>
+              <p className="text-md text-muted-foreground mb-8 leading-relaxed">
                 {feature.description}
               </p>
-              <Button variant="link" className="text-accent p-0 h-auto text-lg">
-                Learn more →
-              </Button>
             </div>
           </div>
         ))}
