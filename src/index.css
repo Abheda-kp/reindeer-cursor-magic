@@ -8,7 +8,11 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
+    /* Font Family */
+    --font-sans: "CursorGothic", "CursorGothic Fallback", system-ui,
+      "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --default-font-family: var(--font-sans);
+    --background: 47 29% 6%;
     --foreground: 0 0% 98%;
 
     --card: 0 0% 10%;
@@ -32,23 +36,102 @@ All colors MUST be HSL.
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
+    --border: 0 0% 15%;
     --input: 0 0% 20%;
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
-    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60% / 0.1), hsl(280 80% 50% / 0.1));
-    --gradient-hero: linear-gradient(180deg, hsl(0 0% 7%), hsl(217 91% 10% / 0.3));
+    /* Color Variables */
+    --color-theme-card-hex: #1b1913;
+
+    /* Layout Variables */
+    --max-width-container: 1300px;
+    --site-header-height: 52px;
+
+    /* Spacing Variables */
+    --spacing-base: 0.25rem;
+    --spacing-1: calc(var(--spacing-base) * 1);
+    --spacing-2: calc(var(--spacing-base) * 2);
+    --spacing-3: calc(var(--spacing-base) * 3);
+    --spacing-4: calc(var(--spacing-base) * 4);
+    --spacing-6: calc(var(--spacing-base) * 6);
+    --spacing-8: calc(var(--spacing-base) * 8);
+
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(217 91% 60% / 0.1),
+      hsl(280 80% 50% / 0.1)
+    );
+    --gradient-hero: linear-gradient(
+      180deg,
+      hsl(0 0% 7%),
+      hsl(217 91% 10% / 0.3)
+    );
+  }
+}
+
+@layer components {
+  /* Navigation Link Styles */
+  .nav-link {
+    @apply text-sm font-medium text-foreground/80 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  /* First Element Padding Top */
+  .pt-first-element {
+    padding-top: calc(1rem * 1.4 * 8);
+  }
+
+  /* Card Background */
+  .bg-card-theme {
+    background-color: var(--color-theme-card-hex);
+  }
+
+  /* Feature Card */
+  .feature-card {
+    @apply grid md:grid-cols-2 gap-16 items-center mb-32 last:mb-0 rounded-2xl p-4;
+    background-color: var(--color-theme-card-hex);
   }
 }
 
 @layer base {
   * {
     @apply border-border;
+    font-family: var(--font-sans);
+  }
+
+  html {
+    @apply antialiased bg-background;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-family: var(--font-sans);
   }
 
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+  }
+
+  #root {
+    @apply bg-background min-h-screen;
+  }
+
+  /* Ensure all text elements use the font */
+  input,
+  textarea,
+  button,
+  select,
+  a,
+  p,
+  span,
+  div,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-sans);
   }
 }

@@ -1,18 +1,17 @@
-import Navbar from "@/components/Navbar";
-import Heading from "@/components/Heading";
-import ProductShowcase from "@/components/ProductShowcase";
 import FeatureDemo from "@/components/FeatureDemo";
+import Heading from "@/components/Heading";
+import Layout from "@/components/Layout";
 import { TeamPage } from "@/components/TeamPage";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-      <Heading />
-      <ProductShowcase />
-      <FeatureDemo />
-      <TeamPage />
-    </div>
+    <Layout>
+      <div className="container pt-first-element">
+        <Heading />
+        <FeatureDemo />
+        <TeamPage />
+      </div>
+    </Layout>
   );
 };
 

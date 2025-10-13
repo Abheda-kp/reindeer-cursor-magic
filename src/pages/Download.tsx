@@ -1,94 +1,129 @@
-import Navbar from "@/components/Navbar";
-import { Download as DownloadIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import reindeerLogo from "@/assets/image/reindeer-logo.png";
-
-// ✅ Using one SVG for all (you can later replace them individually)
 import appleLogo from "@/assets/svg/apple-logo.svg";
 import linuxLogo from "@/assets/svg/linux-logo.svg";
+import Layout from "@/components/Layout";
+import { Button } from "@/components/ui/button";
+import { ChevronDown, Download as DownloadIcon } from "lucide-react";
+import { useState } from "react";
 
 const Download = () => {
+  const [isExpanded, setIsExpanded] = useState(true);
+
   const downloadOptions = [
     {
       os: "macOS",
       icon: appleLogo,
-      versions: ["Mac (ARM64)", "Mac (x64)", "Mac Universal"],
+      versions: [
+        { name: "Mac (ARM64)", arch: "ARM64" },
+        { name: "Mac (x64)", arch: "x64" },
+        { name: "Mac Universal", arch: "Universal" },
+      ],
     },
     {
       os: "Linux",
       icon: linuxLogo,
       versions: [
-        "Linux .deb (ARM64)",
-        "Linux .deb (x64)",
-        "Linux RPM (ARM64)",
-        "Linux RPM (x64)",
-        "Linux AppImage (ARM64)",
-        "Linux AppImage (x64)",
+        { name: "Linux .deb (ARM64)", arch: "ARM64" },
+        { name: "Linux .deb (x64)", arch: "x64" },
+        { name: "Linux RPM (ARM64)", arch: "ARM64" },
+        { name: "Linux RPM (x64)", arch: "x64" },
+        { name: "Linux AppImage (ARM64)", arch: "ARM64" },
+        { name: "Linux AppImage (x64)", arch: "x64" },
       ],
     },
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Navbar />
-
-      <section className="pt-32 pb-20">
-        <div className="container mx-auto px-6 max-w-4xl">
-          {/* Header Section */}
-          <div className="flex items-start gap-8 mb-16">
-            <img src={reindeerLogo} alt="Reindeer" className="h-32 w-32" />
-            <div>
-              <h1 className="text-4xl font-bold mb-2">Download Reindeer</h1>
-              <p className="text-xl text-muted-foreground">
-                Available for macOS and Linux.
-              </p>
+    <Layout showFooter={false}>
+      <div className="container pt-first-element">
+        <section className="py-8">
+          {/* Hero Section with Logo */}
+          <div className="flex items-center gap-5 mb-[5rem]">
+            <div className="flex-shrink-0">
+              <img
+                src={reindeerLogo}
+                alt="Reindeer Logo"
+                className="h-36 w-36"
+              />
+            </div>
+            <div className="">
+              <div>
+                <h1 className="text-[22px] font-bold">Download Reindeer</h1>
+                <p className="text-[22px]  -mt-1 text-muted-foreground mb-6">
+                  Available for macOS, and Linux.
+                </p>
+              </div>
+              <div className="-mt-3">
+                <Button variant="hero" size="sm" className="rounded-full">
+                  Download for Linux
+                  <DownloadIcon className="text-lg" />
+                </Button>
+              </div>
             </div>
           </div>
 
-          {/* Version Info */}
-          <div className="mb-12">
-            <div className="flex items-center gap-3 mb-8">
-              <span className="px-3 py-1 rounded-full bg-accent/20 text-accent text-sm">
+          {/* Version Section */}
+          <div className="border-t border-border pt-8">
+            <div
+              className="flex items-center gap-3 mb-8 cursor-pointer"
+              onClick={() => setIsExpanded(!isExpanded)}
+            >
+              <span className="">1.7</span>
+              <span className="px-3 py-1 rounded-full border border-border text-sm font-medium">
                 Latest
               </span>
+
+              <ChevronDown className="h-6 w-6 ml-auto" />
             </div>
 
-            {/* Download Options */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {downloadOptions.map((option, index) => (
-                <div
-                  key={index}
-                  className="border border-border rounded-lg p-6"
-                >
-                  <div className="flex items-center gap-3 mb-4">
-                    {/* ✅ Using same apple.svg for all */}
-                    <img
-                      src={option.icon}
-                      alt={`${option.os} logo`}
-                      className="h-6 w-6"
-                    />
-                    <h3 className="text-xl font-semibold">{option.os}</h3>
-                  </div>
+            {isExpanded && (
+              <>
+                {/* Download Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                  {downloadOptions.map((option, index) => (
+                    <div
+                      key={index}
+                      className="bg-card/50 border border-border rounded-xl p-6"
+                    >
+                      <div className="flex items-center gap-3 mb-6">
+                        <img
+                          src={option.icon}
+                          alt={`${option.os} logo`}
+                          className="h-5 w-5"
+                        />
+                        <h3 className="text-lg font-semibold">{option.os}</h3>
+                      </div>
 
-                  <div className="space-y-2">
-                    {option.versions.map((version, vIndex) => (
-                      <Button
-                        key={vIndex}
-                        variant="ghost"
-                        className="w-full justify-between text-left h-auto py-3"
-                      >
-                        <span>{version}</span>
-                        <DownloadIcon className="h-4 w-4" />
-                      </Button>
-                    ))}
-                  </div>
+                      <div className="space-y-1">
+                        {option.versions.map((version, vIndex) => (
+                          <button
+                            key={vIndex}
+                            className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg hover:bg-accent/10 transition text-left group"
+                          >
+                            <span className="text-sm">{version.name}</span>
+                            <DownloadIcon className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition" />
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+
+                {/* Release Notes Link */}
+                <div className="flex justify-start">
+                  <a
+                    href="#"
+                    className="text-sm text-orange-500 hover:text-orange-600 transition inline-flex items-center gap-1"
+                  >
+                    View release notes →
+                  </a>
+                </div>
+              </>
+            )}
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      </div>
+    </Layout>
   );
 };
 
