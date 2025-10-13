@@ -9,8 +9,8 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Font Family */
-    --font-sans: "CursorGothic", "CursorGothic Fallback", system-ui,
-      "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-sans: "Nunito Sans", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     --default-font-family: var(--font-sans);
     --background: 47 29% 6%;
     --foreground: 0 0% 98%;
@@ -41,6 +41,23 @@ All colors MUST be HSL.
     --ring: 217 91% 60%;
 
     --radius: 0.75rem;
+
+    /* Typography Variables */
+    --text-base: 1rem;
+    --text-md: 1.375rem;
+    --text-md-lg: 1.625rem;
+    --leading-snug: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.625;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+
+    /* Theme Text Colors */
+    --color-theme-text: #edecec;
+    --color-theme-text-sec: rgba(237, 236, 236, 0.6);
+    --color-theme-text-tertiary: rgba(237, 236, 236, 0.4);
+    --color-theme-accent: #f54e00;
 
     /* Color Variables */
     --color-theme-card-hex: #1b1913;
@@ -79,7 +96,7 @@ All colors MUST be HSL.
 
   /* First Element Padding Top */
   .pt-first-element {
-    padding-top: calc(1rem * 1.4 * 8);
+    padding-top: calc(1rem * 1.4 * 4);
   }
 
   /* Card Background */
@@ -92,6 +109,53 @@ All colors MUST be HSL.
     @apply grid md:grid-cols-2 gap-16 items-center mb-32 last:mb-0 rounded-2xl p-4;
     background-color: var(--color-theme-card-hex);
   }
+
+  /* Feature Link */
+  .feature-link {
+    display: inline-block;
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    font-weight: var(--font-weight-normal);
+    color: var(--color-theme-accent);
+    transition: opacity 0.15s ease-in-out;
+  }
+
+  .feature-link:hover {
+    opacity: 0.8;
+  }
+
+  /* Typography Utilities */
+  .text-size-md {
+    font-size: var(--text-md);
+  }
+
+  .text-size-md-lg {
+    font-size: var(--text-md-lg);
+  }
+
+  .text-color-primary {
+    color: var(--color-theme-text);
+  }
+
+  .text-color-secondary {
+    color: var(--color-theme-text-sec);
+  }
+
+  .leading-snug-custom {
+    line-height: var(--leading-snug);
+  }
+
+  .leading-normal-custom {
+    line-height: var(--leading-normal);
+  }
+
+  .font-semibold-custom {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .font-normal-custom {
+    font-weight: var(--font-weight-normal);
+  }
 }
 
 @layer base {
@@ -101,7 +165,8 @@ All colors MUST be HSL.
   }
 
   html {
-    @apply antialiased bg-background;
+    @apply antialiased;
+    background-color: #14120B;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
@@ -109,12 +174,14 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
+    background-color: #14120B;
     font-family: var(--font-sans);
   }
 
   #root {
-    @apply bg-background min-h-screen;
+    @apply min-h-screen;
+    background-color: #14120B;
   }
 
   /* Ensure all text elements use the font */

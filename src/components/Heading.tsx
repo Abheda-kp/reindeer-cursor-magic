@@ -7,31 +7,41 @@ const Heading = () => {
   const navigate = useNavigate();
 
   return (
-    <section className=" text-white">
+    <section
+      className="text-white"
+      style={{ minHeight: "calc(100vh - var(--site-header-height) - 8rem)" }}
+    >
       {/* <div className="absolute inset-0 bg-[var(--gradient-hero)] opacity-40" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,hsl(217,91%,60%,0.1),transparent_50%)]" /> */}
 
-      <div className="container mx-auto flex">
-        <div className="space-y-6">
-          <h1 className="text-2xl font-semibold leading-snug">
-            Reindeer: Transforming How You Query Databases with AI.
+      <div
+        className="container mx-auto flex flex-col"
+        style={{ minHeight: "calc(100vh - var(--site-header-height) - 8rem)" }}
+      >
+        <div className="space-y-6 py-6">
+          <h1 className="text-size-md-lg leading-snug-custom font-semibold-custom text-color-primary">
+            Reindeer: Transforming How You Query <br />
+            Databases with AI.
           </h1>
 
           <Button
             variant="hero"
-            size="sm"
-            className="mt-4 rounded-full px-6 py-3 bg-white text-black hover:bg-gray-100 transition"
+            size="lg"
+            className="rounded-full px-6 py-2 h-10 bg-white text-black hover:bg-gray-100 transition"
             onClick={() => navigate("/download")}
           >
-            Download
-            <Download className="h-5 w-5" />
+            Download for Linux
+            <Download className="" />
           </Button>
         </div>
-        <div className="rounded-2xl overflow-hidden shadow-2xl bg-card h-[500px]">
+        <div
+          className="rounded-sm shadow-2xl bg-card flex-1"
+          style={{ minHeight: "0" }}
+        >
           <img
             src={reindeerInterface}
             alt="Reindeer Database Management Interface"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover rounded-sm"
           />
         </div>
       </div>

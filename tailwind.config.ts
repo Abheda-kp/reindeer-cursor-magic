@@ -24,11 +24,13 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          "CursorGothic",
-          "CursorGothic Fallback",
+          "Nunito Sans",
           "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
           "Helvetica Neue",
-          "Helvetica",
           "Arial",
           "sans-serif",
         ],

@@ -6,7 +6,7 @@ import { TeamPage } from "@/components/TeamPage";
 const Index = () => {
   return (
     <Layout>
-      <div className="container pt-first-element">
+      <div className="container pt-first-element space-y-16">
         <Heading />
         <FeatureDemo />
         <TeamPage />
