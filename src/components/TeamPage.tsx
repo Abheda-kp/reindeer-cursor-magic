@@ -9,7 +9,8 @@ export const TeamPage = () => {
           "https://t4.ftcdn.net/jpg/03/26/08/53/360_F_326085309_CFH8PpadfnL2OQ7Gi411XW0B21YumxKo.jpg"
         }
         alt="Team"
-        className="w-full h-full object-cover rounded-2xl"
+        className="w-full object-cover rounded-2xl"
+        style={{ height: "calc(100vh - var(--site-header-height) - 10rem)" }}
       />
     </div>
   );

@@ -7,7 +7,7 @@ const featureDemos = [
     title: "AI-powered query autocomplete",
     description:
       "Get real-time SQL suggestions as you type, making queries faster and error-free.",
-    linkText: "Try autocomplete for databases ↗",
+    linkText: "Try autocomplete for databases →",
     linkHref: "#",
     videoSrc: AutoComplete,
     position: "left",
@@ -16,7 +16,7 @@ const featureDemos = [
     title: "Fix with AI",
     description:
       "Corrects syntax and logic errors in your query automatically, saving time and reducing debugging effort.",
-    linkText: "See how AI fixes SQL queries ↗",
+    linkText: "See how AI fixes SQL queries →",
     linkHref: "#",
     videoSrc: FixWithAI,
     position: "right",
@@ -25,7 +25,7 @@ const featureDemos = [
     title: "Inline Chat",
     description:
       "The inline chat feature allows you to simply type what you need in natural language, and it instantly generates the appropriate query for you.",
-    linkText: "Explore natural language queries ↗",
+    linkText: "Explore natural language queries →",
     linkHref: "#",
     videoSrc: InlineChat,
     position: "left",
@@ -36,7 +36,7 @@ const FeatureDemo = () => {
   return (
     <section className="py-12">
       <div className="text-4xl mb-8 font-semibold leading-snug">Features</div>
-      <div className="container space-y-12">
+      <div className="container">
         {featureDemos.map((feature, index) => (
           <div
             key={index}
@@ -80,7 +80,7 @@ const FeatureDemo = () => {
                 controls={false}
                 className="w-full object-contain"
                 style={{
-                  minHeight: "calc(100vh - var(--site-header-height) - 10rem)",
+                  height: "calc(100vh - var(--site-header-height) - 26rem)",
                 }}
               />
             </div>
