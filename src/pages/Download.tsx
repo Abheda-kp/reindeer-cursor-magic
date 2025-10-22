@@ -14,24 +14,39 @@ const Download = () => {
       os: "macOS",
       icon: appleLogo,
       versions: [
-        { name: "Mac (ARM64)", arch: "ARM64" },
-        { name: "Mac (x64)", arch: "x64" },
-        { name: "Mac Universal", arch: "Universal" },
+        { name: "Mac (ARM64)", arch: "ARM64", url: "#" },
+        { name: "Mac (x64)", arch: "x64", url: "#" },
+        { name: "Mac Universal", arch: "Universal", url: "#" },
       ],
     },
     {
       os: "Linux",
       icon: linuxLogo,
       versions: [
-        { name: "Linux .deb (ARM64)", arch: "ARM64" },
-        { name: "Linux .deb (x64)", arch: "x64" },
-        { name: "Linux RPM (ARM64)", arch: "ARM64" },
-        { name: "Linux RPM (x64)", arch: "x64" },
-        { name: "Linux AppImage (ARM64)", arch: "ARM64" },
-        { name: "Linux AppImage (x64)", arch: "x64" },
+        { name: "Linux .deb (ARM64)", arch: "ARM64", url: "https://reindeer.t3.storage.dev/reindeer.deb" },
+        { name: "Linux .deb (x64)", arch: "x64", url: "https://reindeer.t3.storage.dev/reindeer.deb" },
+        { name: "Linux RPM (ARM64)", arch: "ARM64", url: "#" },
+        { name: "Linux RPM (x64)", arch: "x64", url: "#" },
+        { name: "Linux AppImage (ARM64)", arch: "ARM64", url: "#" },
+        { name: "Linux AppImage (x64)", arch: "x64", url: "#" },
       ],
     },
   ];
+
+  const handleDownload = (url: string, filename: string) => {
+    if (url === "#") {
+      alert("Download link not available yet");
+      return;
+    }
+    
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Layout showFooter={false}>
@@ -98,6 +113,7 @@ const Download = () => {
                         {option.versions.map((version, vIndex) => (
                           <button
                             key={vIndex}
+                            onClick={() => handleDownload(version.url, `reindeer-${version.arch.toLowerCase()}.${version.name.includes('.deb') ? 'deb' : version.name.includes('RPM') ? 'rpm' : version.name.includes('AppImage') ? 'AppImage' : 'dmg'}`)}
                             className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg hover:bg-accent/10 transition text-left group"
                           >
                             <span className="text-sm">{version.name}</span>
