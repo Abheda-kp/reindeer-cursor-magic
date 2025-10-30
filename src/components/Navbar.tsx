@@ -18,8 +18,8 @@ const Navbar = () => {
               className="relative inline-flex items-center transition-opacity hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
               aria-label="Homepage"
             >
-              <img src={reindeerLogo} alt="" className="h-8 w-8" />
-              <span className="text-xl font-semibold tracking-tight">
+              <img src={reindeerLogo} alt="" className="h-16 w-16" />
+              <span className="text-2xl font-semibold tracking-tight">
                 Reindeer
               </span>
             </Link>
@@ -28,7 +28,7 @@ const Navbar = () => {
           {/* Navigation - Hidden on mobile */}
           <div className="hidden lg:block">
             <nav
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+              className="absolute left-Z/4 top-1/2 translate-x-1/2 -translate-y-1/2"
               role="navigation"
             >
               <ul className="flex items-center justify-center gap-6">
@@ -52,17 +52,7 @@ const Navbar = () => {
           </div>
 
           {/* Actions */}
-          <div className="col-start-2 col-end-3 row-start-1 row-end-2 flex items-center justify-end gap-2 lg:col-start-3 lg:col-end-[-1]">
-            <Button
-              variant="outline"
-              size="xs"
-              className="text-sm font-normal rounded-full p-3"
-              asChild
-            >
-              <a href="#" target="" rel="noopener noreferrer">
-                Sign in
-              </a>
-            </Button>
+          <div className="col-start-2 col-end-3 row-start-1 row-end-2 flex justify-end gap-2 lg:col-start-3 lg:col-end-[-1]">
             <Button
               variant="hero"
               size="xs"

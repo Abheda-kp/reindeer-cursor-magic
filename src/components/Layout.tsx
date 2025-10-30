@@ -9,7 +9,7 @@ interface LayoutProps {
 
 const Layout = ({ children, showFooter = true }: LayoutProps) => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen" style={{ backgroundColor: "#14120B" }}>
       <Navbar />
       <main>{children}</main>
       {showFooter && <Footer />}

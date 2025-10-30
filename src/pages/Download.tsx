@@ -1,56 +1,47 @@
 import reindeerLogo from "@/assets/image/reindeer-logo.png";
-import appleLogo from "@/assets/svg/apple-logo.svg";
-import linuxLogo from "@/assets/svg/linux-logo.svg";
+import DownloadForButton from "@/components/DownloadForButton";
 import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
+import { IconApple, IconLinux, IconWindows } from "@/components/ui/Icon";
 import { ChevronDown, Download as DownloadIcon } from "lucide-react";
 import { useState } from "react";
 
+const downloadOptions = [
+  {
+    os: "macOS",
+    icon: "apple",
+    versions: [
+      { name: "Mac (ARM64)", arch: "ARM64" },
+      { name: "Mac (x64)", arch: "x64" },
+      { name: "Mac Universal", arch: "Universal" },
+    ],
+  },
+  {
+    os: "Linux",
+    icon: "linux",
+    versions: [
+      { name: "Linux .deb (ARM64)", arch: "ARM64" },
+      { name: "Linux .deb (x64)", arch: "x64" },
+      { name: "Linux RPM (ARM64)", arch: "ARM64" },
+      { name: "Linux RPM (x64)", arch: "x64" },
+      { name: "Linux AppImage (ARM64)", arch: "ARM64" },
+      { name: "Linux AppImage (x64)", arch: "x64" },
+    ],
+  },
+  {
+    os: "Windows",
+    icon: "windows",
+    versions: [],
+  },
+];
 const Download = () => {
   const [isExpanded, setIsExpanded] = useState(true);
 
-  const downloadOptions = [
-    {
-      os: "macOS",
-      icon: appleLogo,
-      versions: [
-        { name: "Mac (ARM64)", arch: "ARM64", url: "#" },
-        { name: "Mac (x64)", arch: "x64", url: "#" },
-        { name: "Mac Universal", arch: "Universal", url: "#" },
-      ],
-    },
-    {
-      os: "Linux",
-      icon: linuxLogo,
-      versions: [
-        { name: "Linux .deb (ARM64)", arch: "ARM64", url: "https://reindeer.t3.storage.dev/reindeer.deb" },
-        { name: "Linux .deb (x64)", arch: "x64", url: "https://reindeer.t3.storage.dev/reindeer.deb" },
-        { name: "Linux RPM (ARM64)", arch: "ARM64", url: "#" },
-        { name: "Linux RPM (x64)", arch: "x64", url: "#" },
-        { name: "Linux AppImage (ARM64)", arch: "ARM64", url: "#" },
-        { name: "Linux AppImage (x64)", arch: "x64", url: "#" },
-      ],
-    },
-  ];
-
-  const handleDownload = (url: string, filename: string) => {
-    if (url === "#") {
-      alert("Download link not available yet");
-      return;
-    }
-    
-    // Create a temporary anchor element to trigger download
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <Layout showFooter={false}>
-      <div className="container pt-first-element">
+      <div
+        className="container "
+        style={{ paddingTop: "calc(1rem * 1.4 * 2)" }}
+      >
         <section className="py-8">
           {/* Hero Section with Logo */}
           <div className="flex items-center gap-5 mb-[5rem]">
@@ -69,10 +60,7 @@ const Download = () => {
                 </p>
               </div>
               <div className="-mt-3">
-                <Button variant="hero" size="sm" className="rounded-full">
-                  Download for Linux
-                  <DownloadIcon className="text-lg" />
-                </Button>
+                <DownloadForButton />
               </div>
             </div>
           </div>
@@ -101,26 +89,39 @@ const Download = () => {
                       className="bg-card/50 border border-border rounded-xl p-6"
                     >
                       <div className="flex items-center gap-3 mb-6">
-                        <img
-                          src={option.icon}
-                          alt={`${option.os} logo`}
-                          className="h-5 w-5"
-                        />
-                        <h3 className="text-lg font-semibold">{option.os}</h3>
+                        {option.icon === "apple" && (
+                          <IconApple className="h-5 w-5" />
+                        )}
+                        {option.icon === "linux" && (
+                          <IconLinux className="h-5 w-5" />
+                        )}
+                        {option.icon === "windows" && (
+                          <IconWindows className="h-5 w-5" />
+                        )}
+                        <h3 className="text-base font-bold">{option.os}</h3>
                       </div>
 
-                      <div className="space-y-1">
-                        {option.versions.map((version, vIndex) => (
-                          <button
-                            key={vIndex}
-                            onClick={() => handleDownload(version.url, `reindeer-${version.arch.toLowerCase()}.${version.name.includes('.deb') ? 'deb' : version.name.includes('RPM') ? 'rpm' : version.name.includes('AppImage') ? 'AppImage' : 'dmg'}`)}
-                            className="w-full flex items-center justify-between px-4 py-2.5 rounded-lg hover:bg-accent/10 transition text-left group"
-                          >
-                            <span className="text-sm">{version.name}</span>
-                            <DownloadIcon className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition" />
-                          </button>
-                        ))}
-                      </div>
+                      {option.versions.length > 0 ? (
+                        <div className="space-y-1">
+                          {option.versions.map((version, vIndex) => (
+                            <button
+                              key={vIndex}
+                              className="w-full flex items-center justify-between py-4  transition text-left group border-b last:border-b-0 border-[#edecec]/10"
+                            >
+                              <span className="text-base hover:text-foreground/80">
+                                {version.name}
+                              </span>
+                              <DownloadIcon className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition" />
+                            </button>
+                          ))}
+                        </div>
+                      ) : (
+                        <div className="flex items-center justify-center h-24">
+                          <span className="text-base text-muted-foreground text-center">
+                            Coming soon
+                          </span>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>

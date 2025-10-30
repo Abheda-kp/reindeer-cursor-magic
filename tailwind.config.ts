@@ -24,11 +24,13 @@ export default {
     extend: {
       fontFamily: {
         sans: [
-          "CursorGothic",
-          "CursorGothic Fallback",
+          "Nunito Sans",
           "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
           "Helvetica Neue",
-          "Helvetica",
           "Arial",
           "sans-serif",
         ],
@@ -100,10 +102,19 @@ export default {
             height: "0",
           },
         },
+        scroll: {
+          "0%": {
+            transform: "translateX(0)",
+          },
+          "100%": {
+            transform: "translateX(calc(-100% / 4))",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        scroll: "scroll var(--duration) linear infinite",
       },
     },
   },

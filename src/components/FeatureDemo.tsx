@@ -1,12 +1,14 @@
-import AutoComplete from "@/assets/videos/auto-complete.mp4";
-import FixWithAI from "@/assets/videos/fix-with-ai.mp4";
-import InlineChat from "@/assets/videos/inline-chat.mp4";
+import AutoComplete from "@/assets/videos/autocomplete-v3.mp4";
+
+const cardHeight = "calc(100vh - var(--site-header-height) - 20rem)";
 
 const featureDemos = [
   {
-    title: "AI-powered query autocomplete",
+    title: "Magically accurate autocomplete",
     description:
       "Get real-time SQL suggestions as you type, making queries faster and error-free.",
+    linkText: "Learn about tab →",
+    linkHref: "#",
     videoSrc: AutoComplete,
     position: "left",
   },
@@ -14,47 +16,77 @@ const featureDemos = [
     title: "Fix with AI",
     description:
       "Corrects syntax and logic errors in your query automatically, saving time and reducing debugging effort.",
-    videoSrc: FixWithAI,
+    linkText: "See how AI fixes SQL queries →",
+    linkHref: "#",
+    videoSrc: AutoComplete,
     position: "right",
   },
   {
     title: "Inline Chat",
     description:
       "The inline chat feature allows you to simply type what you need in natural language, and it instantly generates the appropriate query for you.",
-    videoSrc: InlineChat,
+    linkText: "Explore natural language queries →",
+    linkHref: "#",
+    videoSrc: AutoComplete,
     position: "left",
   },
 ];
 
 const FeatureDemo = () => {
   return (
-    <section className="py-24">
-      <div className="text-4xl mb-6 font-semibold leading-snug">Features</div>
+    <section className="py-12">
       <div className="container">
         {featureDemos.map((feature, index) => (
-          <div key={index} className="feature-card flex gap-8">
+          <div key={index} className="feature-card flex relative ">
+            {/* Optional overlay for better clarity on the card content */}
+            <div
+              style={{
+                minHeight: cardHeight,
+              }}
+            />
             <div
               className={`${
                 feature.position === "left" ? "order-1" : "order-2"
-              } w-1/3 space-y-6 flex flex-col justify-center`}
+              } w-1/3 flex flex-col justify-center max-w-prose`}
+              style={{ position: "relative", zIndex: 2 }}
             >
-              <h2 className="text-xl md:text-2xl font-bold">{feature.title}</h2>
-              <p className="text-md text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <h3 className="text-size-lg leading-snug-custom font-semibold-custom text-color-primary">
+                    {feature.title}
+                  </h3>
+                  <p className="text-size-md leading-snug-custom font-normal-custom text-color-secondary">
+                    {feature.description}
+                  </p>
+                </div>
+                <a href={feature.linkHref} className="feature-link">
+                  {feature.linkText}
+                </a>
+              </div>
             </div>
             <div
               className={`${
                 feature.position === "left" ? "order-2" : "order-1"
-              } w-2/3 rounded-2xl overflow-hidden shadow-2xl bg-card h-[500px]`}
+              } w-full  overflow-hidden  flex items-center justify-center`}
+              style={{
+                position: "relative",
+                // zIndex: 2,
+
+                minHeight: cardHeight,
+                // Background image is applied to the whole card
+                // backgroundImage: `url(${backgroundImage})`,
+                // backgroundSize: "cover",
+                // backgroundPosition: "center",
+                // backgroundRepeat: "no-repeat",
+              }}
             >
               <video
                 src={feature.videoSrc}
                 autoPlay
                 loop
                 muted
-                controls={false}
-                className="w-full h-full object-cover"
+                controls={true}
+                className="w-full h-full object-fill"
               />
             </div>
           </div>
@@ -65,3 +97,5 @@ const FeatureDemo = () => {
 };
 
 export default FeatureDemo;
+
+//bg-card

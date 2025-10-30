@@ -1,25 +1,16 @@
-import { Button } from "@/components/ui/button";
-import { Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import DownloadForButton from "./DownloadForButton";
 
 const Footer = () => {
   const navigate = useNavigate();
 
   return (
-    <footer className="border-t bg-background/95 backdrop-blur-md py-16">
+    <footer className="bg-card-theme backdrop-blur-md py-40">
       <div className="container">
-        <div className="flex flex-col items-center justify-center gap-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold">
-            Try Reindeer now
-          </h2>
-          <Button
-            variant="hero"
-            size="lg"
-            onClick={() => navigate("/download")}
-          >
-            <Download className="mr-2 h-5 w-5" />
-            Download
-          </Button>
+        <div className="flex flex-col items-center justify-center text-center">
+          <h2 className="text-[72px] font-semibold">Try Reindeer now.</h2>
+
+          <DownloadForButton />
         </div>
       </div>
     </footer>
@@ -27,4 +18,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
