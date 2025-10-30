@@ -1,83 +1,59 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { TestimonialCard } from "./TestimonialCard";
 
-type Testimonial = {
-  quote: string;
-  name: string;
-  title: string;
-  avatar?: string;
-};
-
-const testimonials: Testimonial[] = [
-  {
-    quote:
-      "It was night and day from one batch to another, adoption went from single digits to over 80%. It just spread like wildfire, all the best builders were using Cursor.",
-    name: "Diana Hu",
-    title: "General Partner, Y Combinator",
-    avatar:"https://cdn.sanity.io/images/2hv88549/production/5b975491b9ace97040eca409dfa9819cbb80ab76-84x84.png?auto=format"
-  },
-  {
-    quote:
-      "The most useful AI tool that I currently pay for, hands down, is Cursor. It's fast, autocompletes when and where you need it to, handles brackets properly, sensible keyboard shortcuts, bring-your-own-model... everything is well put together.",
-    name: "shadcn",
-    title: "Creator of shadcn/ui",
-  },
-  {
-    quote:
-      "The best LLM applications have an autonomy slider: you control how much independence to give the AI. In Cursor, you can do Tab completion, Cmd+K for targeted edits, or you can let it rip with the full autonomy agentic version.",
-    name: "Andrej Karpathy",
-    title: "CEO, Eureka Labs",
-  },
-  {
-    quote:
-      "Cursor quickly grew from hundreds to thousands of extremely enthusiastic Stripe employees. We spend more on R&D and software creation than any other undertaking, and there's significant economic outcomes when making that process more efficient and productive.",
-    name: "Patrick Collison",
-    title: "Co‑Founder & CEO, Stripe",
-  },
-  {
-    quote:
-      "It's official. I hate vibe coding. I love Cursor tab coding. It's wild.",
-    name: "ThePrimeagen",
-    title: "@ThePrimeagen",
-  },
-  {
-    quote:
-      "It's definitely becoming more fun to be a programmer. It's less about digging through pages and more about what you want to happen. We are at the 1% of what's possible, and it's in interactive experiences like Cursor where models like GPT‑5 shine brightest.",
-    name: "Greg Brockman",
-    title: "President, OpenAI",
-  },
+const testimonials = [
+    {
+        author: {
+            name: "Sarah Johnson",
+            handle: "@sarahj",
+            avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+        },
+        text: "Luva has transformed how I manage my inbox. I can now listen to emails while commuting and respond instantly with voice commands.",
+    },
+    {
+        author: {
+            name: "Michael Chen",
+            handle: "@mchen",
+            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+        },
+        text: "As a founder, time is everything. This tool helps me stay on top of emails without being glued to my screen. The calendar integration is brilliant!",
+    },
+    {
+        author: {
+            name: "Emily Rodriguez",
+            handle: "@emilyrod",
+            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+        },
+        text: "Customer support has never been easier. I can handle urgent emails hands-free and the AI perfectly structures my responses.",
+    },
 ];
 
 const Testimonials = () => {
-  return (
-    <section className="py-12">
-      <div className="container space-y-8">
-        <h2 className="text-4xl font-semibold leading-snug">The new way to build software.</h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {testimonials.map((t, idx) => (
-            <div
-              key={idx}
-              className="rounded-[4px] border bg-card-theme text-card-foreground p-6 flex flex-col justify-between min-h-[260px]"
-            >
-              <p className="text-base leading-relaxed text-foreground/90">{t.quote}</p>
-              <div className="flex items-center gap-3 pt-6">
-                <Avatar className="h-10 w-10">
-                  <AvatarImage src={t.avatar} alt={t.name} />
-                  <AvatarFallback>{t.name.slice(0, 2)}</AvatarFallback>
-                </Avatar>
-                <div className="flex flex-col">
-                  <span className="text-sm font-medium text-foreground">{t.name}</span>
-                  <span className="text-xs text-muted-foreground">{t.title}</span>
+    return (
+        <section id="testimonials" className=" text-foreground py-12 sm:py-24 md:py-32 px-0">
+            <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
+                <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
+                    <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight text-white">
+                        Loved by professionals worldwide
+                    </h2>
+                    <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">See what our users have to say about Luva</p>
                 </div>
-              </div>
+
+                <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
+                    <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
+                        <div className="flex shrink-0 justify-around [gap:var(--gap)] flex-row animate-scroll group-hover:[animation-play-state:paused]">
+                            {[...Array(4)].map((_, setIndex) =>
+                                testimonials.map((testimonial, i) => <TestimonialCard key={`${setIndex}-${i}`} {...testimonial} />)
+                            )}
+                        </div>
+                    </div>
+
+                    <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-[#14120B] via-[#14120B]/80 to-transparent sm:block" />
+                    <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-[#14120B] via-[#14120B]/80 to-transparent sm:block" />
+                </div>
             </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
+        </section>
+    );
 };
 
 export default Testimonials;
-
-
