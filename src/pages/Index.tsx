@@ -10,7 +10,7 @@ const Index = () => {
     <Layout>
       <div className="container pt-36 space-y-16">
         <Heading />
-        <UsedBy />
+        {/* <UsedBy /> */}
         <FeatureDemo />
         <Testimonials />
         <TeamPage />

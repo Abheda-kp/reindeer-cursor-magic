@@ -1,5 +1,4 @@
 import backgroundImage from "@/assets/image/background.jpeg";
-import AutoComplete from "@/assets/videos/Reindeer_Demo.mp4";
 import { ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import DownloadForButton from "./DownloadForButton";
@@ -48,15 +47,21 @@ const Heading = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
+            minHeight: imageHeight,
           }}
         >
           <video
-            src={AutoComplete}
+            src="/videos/Reindeer_Demo.mp4"
             autoPlay
             loop
             muted
             controls
-            className="w-full h-full object-fill border-opacity-0"
+            className="w-full h-full object-cover border-opacity-0"
+            style={{
+              minHeight: imageHeight,
+              aspectRatio: "16/9",
+            }}
+            preload="metadata"
           />
         </div>
       </div>

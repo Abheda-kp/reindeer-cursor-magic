@@ -1,5 +1,3 @@
-import AutoComplete from "@/assets/videos/autocomplete-v3.mp4";
-
 const cardHeight = "calc(100vh - var(--site-header-height) - 20rem)";
 
 const featureDemos = [
@@ -9,7 +7,7 @@ const featureDemos = [
       "Get real-time SQL suggestions as you type, making queries faster and error-free.",
     linkText: "Learn about tab →",
     linkHref: "#",
-    videoSrc: AutoComplete,
+    videoSrc: "/videos/autocomplete-v3.mp4",
     position: "left",
   },
   {
@@ -18,7 +16,7 @@ const featureDemos = [
       "Corrects syntax and logic errors in your query automatically, saving time and reducing debugging effort.",
     linkText: "See how AI fixes SQL queries →",
     linkHref: "#",
-    videoSrc: AutoComplete,
+    videoSrc: "/videos/fix-with-ai.mp4",
     position: "right",
   },
   {
@@ -27,7 +25,7 @@ const featureDemos = [
       "The inline chat feature allows you to simply type what you need in natural language, and it instantly generates the appropriate query for you.",
     linkText: "Explore natural language queries →",
     linkHref: "#",
-    videoSrc: AutoComplete,
+    videoSrc: "/videos/inline-chat.mp4",
     position: "left",
   },
 ];
