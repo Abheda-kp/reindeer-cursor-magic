@@ -10,21 +10,21 @@ const downloadOptions = [
     os: "macOS",
     icon: "apple",
     versions: [
-      { name: "Mac (ARM64)", arch: "ARM64" },
-      { name: "Mac (x64)", arch: "x64" },
-      { name: "Mac Universal", arch: "Universal" },
+      { name: "Mac (ARM64)", arch: "ARM64", downloadUrl: null },
+      { name: "Mac (x64)", arch: "x64", downloadUrl: null },
+      { name: "Mac Universal", arch: "Universal", downloadUrl: null },
     ],
   },
   {
     os: "Linux",
     icon: "linux",
     versions: [
-      { name: "Linux .deb (ARM64)", arch: "ARM64" },
-      { name: "Linux .deb (x64)", arch: "x64" },
-      { name: "Linux RPM (ARM64)", arch: "ARM64" },
-      { name: "Linux RPM (x64)", arch: "x64" },
-      { name: "Linux AppImage (ARM64)", arch: "ARM64" },
-      { name: "Linux AppImage (x64)", arch: "x64" },
+      { name: "Linux .deb (ARM64)", arch: "ARM64", downloadUrl: null },
+      { name: "Linux .deb (x64)", arch: "x64", downloadUrl: "https://reindeer.t3.storage.dev/reindeer.deb" },
+      { name: "Linux RPM (ARM64)", arch: "ARM64", downloadUrl: null },
+      { name: "Linux RPM (x64)", arch: "x64", downloadUrl: null },
+      { name: "Linux AppImage (ARM64)", arch: "ARM64", downloadUrl: null },
+      { name: "Linux AppImage (x64)", arch: "x64", downloadUrl: null },
     ],
   },
   {
@@ -35,6 +35,22 @@ const downloadOptions = [
 ];
 const Download = () => {
   const [isExpanded, setIsExpanded] = useState(true);
+
+  const handleDownload = (downloadUrl: string | null, fileName: string) => {
+    if (!downloadUrl) {
+      // Show coming soon message or handle unavailable downloads
+      alert("This download is not available yet. Coming soon!");
+      return;
+    }
+
+    // Create a temporary anchor element to trigger download
+    const link = document.createElement('a');
+    link.href = downloadUrl;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <Layout showFooter={false}>
@@ -106,10 +122,18 @@ const Download = () => {
                           {option.versions.map((version, vIndex) => (
                             <button
                               key={vIndex}
-                              className="w-full flex items-center justify-between py-4  transition text-left group border-b last:border-b-0 border-[#edecec]/10"
+                              onClick={() => handleDownload(version.downloadUrl, `reindeer-${version.arch.toLowerCase()}.${option.os === 'Linux' ? 'deb' : 'pkg'}`)}
+                              className={`w-full flex items-center justify-between py-4 transition text-left group border-b last:border-b-0 border-[#edecec]/10 ${
+                                version.downloadUrl 
+                                  ? ' cursor-pointer' 
+                                  : 'opacity-50 cursor-not-allowed'
+                              }`}
                             >
                               <span className="text-base hover:text-foreground/80">
                                 {version.name}
+                                {!version.downloadUrl && (
+                                  <span className="text-xs text-muted-foreground ml-2">(Coming soon)</span>
+                                )}
                               </span>
                               <DownloadIcon className="h-4 w-4 text-muted-foreground group-hover:text-foreground transition" />
                             </button>
