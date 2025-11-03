@@ -7,7 +7,7 @@ const featureDemos = [
       "Get real-time SQL suggestions as you type, making queries faster and error-free.",
     linkText: "Learn about tab →",
     linkHref: "#",
-    videoSrc: "/videos/autocomplete-v3.mp4",
+    videoSrc: "/videos/autocomplete.mp4",
     position: "left",
   },
   {
@@ -35,17 +35,15 @@ const FeatureDemo = () => {
     <section className="py-12">
       <div className="container">
         {featureDemos.map((feature, index) => (
-          <div key={index} className="feature-card flex relative ">
-            {/* Optional overlay for better clarity on the card content */}
-            <div
-              style={{
-                minHeight: cardHeight,
-              }}
-            />
+          <div
+            key={index}
+            className="feature-card flex relative"
+            style={{ height: cardHeight }}
+          >
             <div
               className={`${
                 feature.position === "left" ? "order-1" : "order-2"
-              } w-1/3 flex flex-col justify-center max-w-prose`}
+              } w-1/3 flex flex-col justify-center max-w-prose px-8`}
               style={{ position: "relative", zIndex: 2 }}
             >
               <div className="space-y-4">
@@ -65,17 +63,10 @@ const FeatureDemo = () => {
             <div
               className={`${
                 feature.position === "left" ? "order-2" : "order-1"
-              } w-full  overflow-hidden  flex items-center justify-center`}
+              } w-full overflow-hidden flex items-center justify-center`}
               style={{
                 position: "relative",
-                // zIndex: 2,
-
-                minHeight: cardHeight,
-                // Background image is applied to the whole card
-                // backgroundImage: `url(${backgroundImage})`,
-                // backgroundSize: "cover",
-                // backgroundPosition: "center",
-                // backgroundRepeat: "no-repeat",
+                height: cardHeight,
               }}
             >
               <video
@@ -83,8 +74,8 @@ const FeatureDemo = () => {
                 autoPlay
                 loop
                 muted
-                controls={true}
-                className="w-full h-full object-fill"
+                controls={false}
+                className="w-full h-full object-cover"
               />
             </div>
           </div>
