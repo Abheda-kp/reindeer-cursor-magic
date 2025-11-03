@@ -40,7 +40,7 @@ const Heading = () => {
           </div>
         </div>
         <div
-          className="mt-16 rounded-sm flex-1 p-3"
+          className="mt-16 flex-1 overflow-hidden"
           style={{
             // Background image is applied to the whole card
             backgroundImage: `url(${backgroundImage})`,
@@ -56,7 +56,7 @@ const Heading = () => {
             loop
             muted
             controls
-            className="w-full h-full object-cover border-opacity-0"
+            className="w-full h-full object-cover"
             style={{
               minHeight: imageHeight,
               aspectRatio: "16/9",
