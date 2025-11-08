@@ -1,11 +1,25 @@
 import reindeerLogo from "@/assets/image/reindeer-logo.png";
 import { Button } from "@/components/ui/button";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu } from "lucide-react";
 
+const scrollToElement = (elementId: string) => {
+  const el = document.getElementById(elementId);
+  if (el) {
+    const headerOffset = 80; // slightly more than --site-header-height for padding
+    const elementPosition = el.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth"
+    });
+  }
+};
+
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const headerItemsText: React.HTMLAttributes<HTMLAnchorElement>["className"] =
     "text-sm font-medium text-foreground transition-colors hover:text-foreground/80";
 
@@ -37,44 +51,86 @@ const Navbar = () => {
               </SheetTrigger>
               <SheetContent>
                 <nav className="flex flex-col space-y-4 mt-8">
-                  <a href="/features" className={headerItemsText}>
-                    Features
-                  </a>
-                  <a href="/docs" className={headerItemsText}>
-                    Docs
-                  </a>
-                  <a href="/about" className={headerItemsText}>
-                    About
-                  </a>
-                </nav>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (location.pathname !== "/") {
+                          navigate("/", { state: { scrollTo: "features" } });
+                        } else {
+                          scrollToElement("features");
+                        }
+                      }}
+                      className={`${headerItemsText} block w-full text-left py-3 px-4 rounded-md hover:bg-muted/20`}
+                    >
+                      Features
+                    </button>
+                      <a href="/docs" className={`${headerItemsText} block w-full text-left py-3 px-4 rounded-md hover:bg-muted/20`}>
+                      Docs
+                    </a>
+                    <button
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (location.pathname !== "/") {
+                          navigate("/", { state: { scrollTo: "about" } });
+                        } else {
+                          scrollToElement("about");
+                        }
+                      }}
+                      className={`${headerItemsText} block w-full text-left py-3 px-4 rounded-md hover:bg-muted/20`}
+                    >
+                      About
+                    </button>
+                 </nav>
               </SheetContent>
             </Sheet>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:block">
-            <nav
-              className="absolute left-Z/4 top-1/2 translate-x-1/2 -translate-y-1/2"
-              role="navigation"
-            >
-              <ul className="flex items-center justify-center gap-6">
-                <li>
-                  <a href="/features" className={headerItemsText}>
-                    Features
-                  </a>
-                </li>
-                <li>
-                  <a href="/docs" className={headerItemsText}>
-                    Docs
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className={headerItemsText}>
-                    About
-                  </a>
-                </li>
-              </ul>
-            </nav>
+              <nav
+                className="absolute left-Z/4 top-1/2 translate-x-1/2 -translate-y-1/2"
+                role="navigation"
+              >
+                <ul className="flex items-center justify-center gap-6">
+                  <li>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (location.pathname !== "/") {
+                          navigate("/", { state: { scrollTo: "features" } });
+                        } else {
+                          scrollToElement("features");
+                        }
+                      }}
+                      className={headerItemsText}
+                    >
+                      Features
+                    </button>
+                  </li>
+                  <li>
+                    <a href="/docs" className={headerItemsText}>
+                      Docs
+                    </a>
+                  </li>
+                  <li>
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (location.pathname !== "/") {
+                          navigate("/", { state: { scrollTo: "about" } });
+                        } else {
+                          scrollToElement("about");
+                        }
+                      }}
+                      className={headerItemsText}
+                    >
+                      About
+                    </button>
+                  </li>
+                </ul>
+              </nav>
           </div>
 
           {/* Actions */}

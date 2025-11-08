@@ -7,9 +7,9 @@ import WatchDemoButton from "./WatchDemoButton";
 const Heading = () => {
   const navigate = useNavigate();
   return (
-    <section className="text-white min-h-[calc(100vh-var(--site-header-height))] px-4 sm:px-6 lg:px-8">
+    <section className="text-white  px-4 sm:px-6 lg:px-8" >
       <div
-        className="flex flex-col items-center text-center min-h-[calc(100vh-var(--site-header-height))]"
+        className="flex flex-col items-center text-center"
       >
         <div className="space-y-8 sm:space-y-10 max-w-7xl mx-auto">
           <div className="space-y-4 sm:space-y-6">
@@ -27,7 +27,7 @@ const Heading = () => {
             </p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 justify-center">
-            <WatchDemoButton className="text-base sm:text-lg font-semibold w-full sm:w-auto" />
+            {/* <WatchDemoButton className="text-base sm:text-lg font-semibold w-full sm:w-auto" /> */}
             <DownloadForButton
               text="Download now"
               className="text-base sm:text-lg font-semibold w-full sm:w-auto"

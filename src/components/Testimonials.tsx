@@ -34,7 +34,7 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className=" text-foreground py-12 sm:py-24 md:py-32 px-0"
+      className=" text-foreground py-12 sm:py-24 md:py-32 px-0 border-b"
     >
       <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16 px-4 sm:px-8">
         <div className="flex flex-col items-center gap-4 px-2 sm:gap-8">
