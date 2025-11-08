@@ -32,18 +32,17 @@ const featureDemos = [
 
 const FeatureDemo = () => {
   return (
-    <section className="py-12">
+    <section className="py-3 sm:py-12">
       <div className="container">
         {featureDemos.map((feature, index) => (
           <div
             key={index}
-            className="feature-card flex relative"
-            style={{ height: cardHeight }}
+            className="feature-card flex flex-col md:flex-row md:items-center md:gap-8 relative md:min-h-[calc(100vh-var(--site-header-height)-20rem)]"
           >
             <div
               className={`${
-                feature.position === "left" ? "order-1" : "order-2"
-              } w-1/3 flex flex-col justify-center max-w-prose px-8`}
+                feature.position === "left" ? "md:order-1" : "md:order-2"
+              } w-full md:w-1/3 flex flex-col justify-center max-w-prose p-4 sm:px-8`}
               style={{ position: "relative", zIndex: 2 }}
             >
               <div className="space-y-4">
@@ -62,21 +61,29 @@ const FeatureDemo = () => {
             </div>
             <div
               className={`${
-                feature.position === "left" ? "order-2" : "order-1"
-              } w-full overflow-hidden flex items-center justify-center`}
-              style={{
-                position: "relative",
-                height: cardHeight,
-              }}
+                feature.position === "left" ? "md:order-2" : "md:order-1"
+              } w-full md:w-2/3 overflow-hidden flex items-center justify-center px-4 sm:px-8`}
             >
-              <video
-                src={feature.videoSrc}
-                autoPlay
-                loop
-                muted
-                controls={false}
-                className="w-full h-full object-cover"
-              />
+              {/* Aspect-ratio wrapper so video scales consistently on tablets (iPad Pro) */}
+              <div
+                className="relative w-full flex justify-center"
+                style={{
+                  aspectRatio: '16/9',
+                  width: '100%',
+                  maxWidth: '720px',
+                  maxHeight: 'calc(100vh - var(--site-header-height) - 8rem)'
+                }}
+              >
+                <video
+                  src={feature.videoSrc}
+                  autoPlay
+                  loop
+                  muted
+                  controls={false}
+                  className="absolute inset-0 w-full h-full object-cover rounded-lg"
+                  preload="metadata"
+                />
+              </div>
             </div>
           </div>
         ))}

@@ -8,7 +8,7 @@ import UsedBy from "@/components/UsedBy";
 const Index = () => {
   return (
     <Layout>
-      <div className="container pt-36 space-y-16">
+      <div className="container px-4 sm:px-8 pt-24 sm:pt-36 space-y-8 sm:space-y-16">
         <Heading />
         {/* <UsedBy /> */}
         <FeatureDemo />

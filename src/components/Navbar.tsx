@@ -1,6 +1,8 @@
 import reindeerLogo from "@/assets/image/reindeer-logo.png";
 import { Button } from "@/components/ui/button";
 import { Link, useNavigate } from "react-router-dom";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Menu } from "lucide-react";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -25,7 +27,31 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Navigation - Hidden on mobile */}
+          {/* Mobile Menu */}
+          <div className="lg:hidden ml-auto">
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent>
+                <nav className="flex flex-col space-y-4 mt-8">
+                  <a href="/features" className={headerItemsText}>
+                    Features
+                  </a>
+                  <a href="/docs" className={headerItemsText}>
+                    Docs
+                  </a>
+                  <a href="/about" className={headerItemsText}>
+                    About
+                  </a>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
+
+          {/* Desktop Navigation */}
           <div className="hidden lg:block">
             <nav
               className="absolute left-Z/4 top-1/2 translate-x-1/2 -translate-y-1/2"
