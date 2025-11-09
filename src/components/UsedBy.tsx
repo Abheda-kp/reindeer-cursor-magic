@@ -12,15 +12,21 @@ const useByCompanies = [
 
 export default function UsedBy() {
   return (
-    <section className="text-white">
+    <section className="text-white px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col justify-self-center">
-
         <div>
-          <div>Trusted everyday by professional developers</div>
+          <div className="text-base sm:text-lg md:text-xl text-center">
+            Trusted everyday by professional developers
+          </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-6 py-6">
-          {useByCompanies.map((company) => (
-            <div className="bg-card-theme p-4 rounded-md">{company.name}</div>
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 py-4 sm:py-6">
+          {useByCompanies.map((company, index) => (
+            <div
+              key={index}
+              className="bg-card-theme p-3 sm:p-4 rounded-md text-sm sm:text-base"
+            >
+              {company.name}
+            </div>
           ))}
         </div>
       </div>

@@ -3,30 +3,62 @@ import { TestimonialCard } from "./TestimonialCard";
 const testimonials = [
   {
     author: {
-      name: "Sarah Johnson",
-      handle: "@sarahj",
+      name: "Diana Hu",
+      title: "General Partner, Y Combinator",
       avatar:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
     },
-    text: "Luva has transformed how I manage my inbox. I can now listen to emails while commuting and respond instantly with voice commands.",
+    text: "It was night and day from one batch to another, adoption went from single digits to over 80%. It just spread like wildfire, all the best builders were using Cursor.",
   },
   {
     author: {
-      name: "Michael Chen",
-      handle: "@mchen",
+      name: "shadcn",
+      title: "Creator of shadcn/ui",
+      avatar:
+        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "The most useful AI tool that I currently pay for, hands down, is Cursor. It's fast, autocompletes when and where you need it to, handles brackets properly, sensible keyboard shortcuts, bring-your-own-model... everything is well put together.",
+  },
+  {
+    author: {
+      name: "Andrej Karpathy",
+      title: "CEO, Eureka Labs",
+      avatar:
+        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "The best LLM applications have an autonomy slider: you control how much independence to give the AI. In Cursor, you can do Tab completion, Cmd+K for targeted edits, or you can let it rip with the full autonomy agentic version.",
+  },
+  {
+    author: {
+      name: "Patrick Collison",
+      title: "Co-Founder & CEO, Stripe",
+      avatar:
+        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
+    },
+    text: "Cursor quickly grew from hundreds to thousands of extremely enthusiastic Stripe employees. We spend more on R&D and software creation than any other undertaking, and there's significant economic outcomes when making that process more efficient and productive.",
+  },
+  {
+    author: {
+      name: "ThePrimeagen",
+      title: "@ThePrimeagen",
       avatar:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
     },
-    text: "As a founder, time is everything. This tool helps me stay on top of emails without being glued to my screen. The calendar integration is brilliant!",
+    text: [
+      "It's official.",
+      "I hate vibe coding.",
+      "I love Cursor tab coding.",
+      "It's wild.",
+    ],
   },
   {
     author: {
-      name: "Emily Rodriguez",
-      handle: "@emilyrod",
+      name: "Greg Brockman",
+      title: "President, OpenAI",
       avatar:
-        "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+        "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face",
     },
-    text: "Customer support has never been easier. I can handle urgent emails hands-free and the AI perfectly structures my responses.",
+    text: "It's definitely becoming more fun to be a programmer. It's less about digging through pages and more about what you want to happen. We are at the 1% of what's possible, and it's in interactive experiences like Cursor where models like GPT-5 shine brightest.",
   },
 ];
 
@@ -34,31 +66,19 @@ const Testimonials = () => {
   return (
     <section
       id="testimonials"
-      className=" text-foreground py-12 sm:py-24 md:py-32 px-0"
+      className="text-foreground py-6 sm:py-12 md:py-20 lg:py-32 px-4 sm:px-6 lg:px-8"
     >
-      <div className="mx-auto flex max-w-container flex-col items-center gap-4 text-center sm:gap-16">
-        <div className="flex flex-col items-center gap-4 px-4 sm:gap-8">
-          <h2 className="max-w-[720px] text-3xl font-semibold leading-tight sm:text-5xl sm:leading-tight text-white">
-            Loved by professionals worldwide
+      <div className="mx-auto flex max-w-[1300px] flex-col items-center gap-6 sm:gap-10 md:gap-14 lg:gap-16 text-center">
+        <div className="flex flex-col items-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+          <h2 className="max-w-[90%] sm:max-w-[720px] text-2xl sm:text-3xl md:text-4xl font-semibold-custom leading-snug-custom text-color-primary">
+            A new way to experience databases.
           </h2>
-          <p className="text-md max-w-[600px] font-medium text-muted-foreground sm:text-xl">
-            See what our users have to say about Reindeer
-          </p>
         </div>
 
-        <div className="relative flex w-full flex-col items-center justify-center overflow-hidden">
-          <div className="group flex overflow-hidden p-2 [--gap:1rem] [gap:var(--gap)] flex-row [--duration:40s]">
-            <div className="flex shrink-0 justify-around [gap:var(--gap)] flex-row animate-scroll group-hover:[animation-play-state:paused]">
-              {[...Array(4)].map((_, setIndex) =>
-                testimonials.map((testimonial, i) => (
-                  <TestimonialCard key={`${setIndex}-${i}`} {...testimonial} />
-                ))
-              )}
-            </div>
-          </div>
-
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/3 bg-gradient-to-r from-[#14120B] via-[#14120B]/80 to-transparent sm:block" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 bg-gradient-to-l from-[#14120B] via-[#14120B]/80 to-transparent sm:block" />
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-2">
+          {testimonials.map((testimonial, i) => (
+            <TestimonialCard key={i} {...testimonial} />
+          ))}
         </div>
       </div>
     </section>
