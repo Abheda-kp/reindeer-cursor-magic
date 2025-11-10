@@ -21,7 +21,7 @@ const downloadOptions = [
       {
         name: "Linux .deb (x64)",
         arch: "x64",
-        downloadUrl: "https://reindeer.t3.storage.dev/reindeer.deb",
+        downloadUrl: "https://reindeer.t3.storage.dev/reindeer_1.0.0_amd64.deb",
       },
       { name: "Linux AppImage (ARM64)", arch: "ARM64", downloadUrl: null },
       { name: "Linux AppImage (x64)", arch: "x64", downloadUrl: null },
