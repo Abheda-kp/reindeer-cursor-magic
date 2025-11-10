@@ -9,8 +9,8 @@ const downloadOptions = [
     os: "macOS",
     icon: "apple",
     versions: [
-      { name: "Mac (ARM64)", arch: "ARM64", downloadUrl: null },
-      { name: "Mac (x64)", arch: "x64", downloadUrl: null },
+      { name: "Mac (ARM64)", arch: "ARM64", downloadUrl: "https://reindeer.t3.storage.dev/Reindeer-1.0.0-arm64.dmg" },
+      { name: "Mac (x64)", arch: "x64", downloadUrl: "https://reindeer.t3.storage.dev/Reindeer-1.0.0.dmg" },
     ],
   },
   {
@@ -22,9 +22,9 @@ const downloadOptions = [
         name: "Linux .deb (x64)",
         arch: "x64",
         downloadUrl: "https://reindeer.t3.storage.dev/reindeer.deb",
-      },
-      { name: "Linux AppImage (ARM64)", arch: "ARM64", downloadUrl: null },
-      { name: "Linux AppImage (x64)", arch: "x64", downloadUrl: null },
+      }
+      // { name: "Linux AppImage (ARM64)", arch: "ARM64", downloadUrl: null },
+      // { name: "Linux AppImage (x64)", arch: "x64", downloadUrl: null },
     ],
   },
   {
