@@ -25,7 +25,7 @@ const Heading = () => {
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[100px] leading-snug-custom font-semibold-custom text-color-primary px-2">
               Cursor for Databases.
             </h1>
-            <p className="text-sm sm:text-base md:text-lg lg:text-size-md leading-snug-custom font-normal-custom text-color-secondary text-center max-w-[90%] sm:max-w-[600px] lg:max-w-[800px] mx-auto">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-snug-custom font-normal-custom text-color-secondary text-center max-w-[90%] sm:max-w-[600px] lg:max-w-[800px] mx-auto">
               {
                 "Reindeer understands your database schema, generates production-ready SQL in seconds, autocompletes, and fixes without ever leaving your IDE."
               }
