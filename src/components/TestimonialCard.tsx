@@ -26,7 +26,7 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 
   return (
     <CardElement
-      {...(href ? { href } : {})}
+      {...(href ? { href, target: "_blank", rel: "noopener noreferrer" } : {})}
       className={cn(
         "flex flex-col justify-between rounded-sm",
         "bg-card-theme",
@@ -42,9 +42,9 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
         {textArray.map((paragraph, index) => (
           <p
             key={index}
-            className="text-sm sm:text-base text-color-primary leading-normal-custom"
+            className="text-sm sm:text-base text-color-primary leading-normal-custom whitespace-pre-line"
           >
-            {paragraph}
+            <q>{paragraph}</q>
           </p>
         ))}
       </div>

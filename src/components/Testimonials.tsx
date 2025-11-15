@@ -8,7 +8,7 @@ const testimonials = [
       avatar:
         "https://ca.slack-edge.com/T4LJBDMDY-U01C9H7PQ9G-9e2d57556587-192",
     },
-    text: "Reindeer has significantly improved my worflow with databases. Saves me a lot of time in writing & debugging SQL queries. It feels like the perfect 'Cursor for databases",
+    text: "Reindeer has significantly improved my worflow with databases. Saves me a lot of time in writing & debugging SQL queries. It feels like the perfect 'Cursor for databases'",
     href: "https://in.linkedin.com/in/shamlikhancp",
   },
   {
@@ -18,8 +18,38 @@ const testimonials = [
       avatar:
         "https://ca.slack-edge.com/T4LJBDMDY-UMK26FBMW-e07c7ee29d1c-512",
     },
-    text: "Reindeer is like having an expert SQL developer on call whenever I need it. Much recommended!",
+    text: "Reindeer is like having an expert SQL developer on call whenever I need it.\nMuch recommended!",
     href: "https://in.linkedin.com/in/aparna-haridas-b0187287",
+  },
+   {
+    author: {
+      name: "Vivek R",
+      title: "CTO, winfunc (YC S24)",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D4D03AQH7d7eRwtpGgg/profile-displayphoto-scale_200_200/B4DZex9zLJGgAc-/0/1751037459177?e=2147483647&v=beta&t=B7jK0qk7WtuL9asr0ZQVTcSFNsmQFqMgeWgJxTUArNM",
+    },
+    text: "Reindeer feels like the future of database work. Fast, intuitive, and extremely helpful for complex queries.",
+    href: "https://www.linkedin.com/in/123vivekr/",
+  },
+  {
+    author: {
+      name: "Ky-Name",
+      title: "24 y/o founder",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D5603AQHW5qAnwgnC9w/profile-displayphoto-scale_200_200/B56ZlGgWCgHAAY-/0/1757824509046?e=1764806400&v=beta&t=6YfIjqyB5Ne0GKdAJSmd0hLFve6vHat-fMiVBR7CSUE",
+    },
+    text: "Excited, This is a killer tool for devs",
+    href: "https://www.linkedin.com/in/withkynam/",
+  },
+  {
+    author: {
+      name: "Deven Yuvraj",
+      title: "CEO, Hirly",
+      avatar:
+        "https://media.licdn.com/dms/image/v2/D5603AQEiVFaLgutMdA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1724188833694?e=1764806400&v=beta&t=3Yv3a7TR2cBFnIHL09q9HbplSR45P9knjOH5uzWiG4k",
+    },
+    text: "Reindeer is a game-changer! Excited for its launch and smoother SQL workflows",
+    href: "https://www.linkedin.com/in/devenyuvraj/",
   },
   {
     author: {
