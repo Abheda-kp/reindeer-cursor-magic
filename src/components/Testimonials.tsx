@@ -8,7 +8,7 @@ const testimonials = [
       avatar:
         "https://ca.slack-edge.com/T4LJBDMDY-U01C9H7PQ9G-9e2d57556587-192",
     },
-    text: "Reindeer has significantly improved my worflow with databases. Saves me a lot of time in writing & debugging SQL queries. It feels like the perfect 'Cursor for databases'",
+    text: "Reindeer saves me a lot of time in writing & debugging SQL queries. \n\nIt feels like the perfect 'Cursor for databases'",
     href: "https://in.linkedin.com/in/shamlikhancp",
   },
   {
@@ -18,7 +18,7 @@ const testimonials = [
       avatar:
         "https://ca.slack-edge.com/T4LJBDMDY-UMK26FBMW-e07c7ee29d1c-512",
     },
-    text: "Reindeer is like having an expert SQL developer on call whenever I need it.\nMuch recommended!",
+    text: "Reindeer is like having an expert SQL developer on call whenever I need it.\n\nMuch recommended!",
     href: "https://in.linkedin.com/in/aparna-haridas-b0187287",
   },
    {
