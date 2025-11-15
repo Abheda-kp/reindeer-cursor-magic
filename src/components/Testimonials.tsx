@@ -9,6 +9,7 @@ const testimonials = [
         "https://ca.slack-edge.com/T4LJBDMDY-U01C9H7PQ9G-9e2d57556587-192",
     },
     text: "Reindeer has significantly improved my worflow with databases. Saves me a lot of time in writing & debugging SQL queries. It feels like the perfect 'Cursor for databases",
+    href: "https://in.linkedin.com/in/shamlikhancp",
   },
   {
     author: {
@@ -18,6 +19,7 @@ const testimonials = [
         "https://ca.slack-edge.com/T4LJBDMDY-UMK26FBMW-e07c7ee29d1c-512",
     },
     text: "Reindeer is like having an expert SQL developer on call whenever I need it. Much recommended!",
+    href: "https://in.linkedin.com/in/aparna-haridas-b0187287",
   },
   {
     author: {
@@ -27,6 +29,7 @@ const testimonials = [
         "https://pbs.twimg.com/profile_images/1262980203229265920/Xm1WX8bA_400x400.jpg",
     },
     text: "Night and day difference compared to other database tools. Reindeer has become my goto tool for querying my query",
+    href: "https://x.com/pranavmodx",
   },
 ];
 

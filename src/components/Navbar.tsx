@@ -79,6 +79,15 @@ const Navbar = () => {
                     About
                   </button>
                 </li>
+                <li>
+                  <button
+                    onClick={() => handleNavClick("setup")}
+                    className={headerItemsText}
+                    type="button"
+                  >
+                    How to setup
+                  </button>
+                </li>
               </ul>
             </nav>
           </div>
@@ -132,6 +141,15 @@ const Navbar = () => {
                   type="button"
                 >
                   About
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleNavClick("setup")}
+                  className={`${headerItemsText} block py-2 text-left w-full`}
+                  type="button"
+                >
+                  How to setup
                 </button>
               </li>
             </ul>
