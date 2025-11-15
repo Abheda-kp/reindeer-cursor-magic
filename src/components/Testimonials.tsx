@@ -8,7 +8,7 @@ const testimonials = [
       avatar:
         "https://ca.slack-edge.com/T4LJBDMDY-U01C9H7PQ9G-9e2d57556587-192",
     },
-    text: "Reindeer saves me a lot of time in writing & debugging SQL queries. \n\nIt feels like the perfect 'Cursor for databases'",
+    text: "Reindeer saves me a lot of time in writing & debugging SQL queries. Feels like the perfect Cursor for databases",
     href: "https://in.linkedin.com/in/shamlikhancp",
   },
   {
@@ -33,13 +33,23 @@ const testimonials = [
   },
   {
     author: {
-      name: "Ky-Name",
-      title: "24 y/o founder",
+      name: "Ky-Nam",
+      title: "24 y/o tech founder",
       avatar:
         "https://media.licdn.com/dms/image/v2/D5603AQHW5qAnwgnC9w/profile-displayphoto-scale_200_200/B56ZlGgWCgHAAY-/0/1757824509046?e=1764806400&v=beta&t=6YfIjqyB5Ne0GKdAJSmd0hLFve6vHat-fMiVBR7CSUE",
     },
-    text: "Excited, This is a killer tool for devs",
+    text: "Excited for Reindeer, This is a killer tool for devs!",
     href: "https://www.linkedin.com/in/withkynam/",
+  },
+   {
+    author: {
+      name: "Pranav Shridhar",
+      title: "SDE II, Yellow.ai",
+      avatar:
+        "https://pbs.twimg.com/profile_images/1262980203229265920/Xm1WX8bA_400x400.jpg",
+    },
+    text: "Night and day difference compared to other database tools. Reindeer has become my goto tool for all my query",
+    href: "https://x.com/pranavmodx",
   },
   {
     author: {
@@ -51,16 +61,7 @@ const testimonials = [
     text: "Reindeer is a game-changer! Excited for its launch and smoother SQL workflows",
     href: "https://www.linkedin.com/in/devenyuvraj/",
   },
-  {
-    author: {
-      name: "Pranav Shridhar",
-      title: "SDE II, Yellow.ai",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1262980203229265920/Xm1WX8bA_400x400.jpg",
-    },
-    text: "Night and day difference compared to other database tools. Reindeer has become my goto tool for querying my query",
-    href: "https://x.com/pranavmodx",
-  },
+ 
 ];
 
 const Testimonials = () => {

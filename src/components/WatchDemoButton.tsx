@@ -2,7 +2,7 @@ import { Button } from "./ui/button";
 
 export default function WatchDemoButton({
   className = "",
-  text = "How to ",
+  text = "How to setup",
 }) {
   const handleScrollToVideo = () => {
     const videoElement = document.getElementById("demo-video");

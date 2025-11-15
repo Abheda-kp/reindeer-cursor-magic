@@ -24,7 +24,7 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/joyalajohney",
   },
   {
-    name: "Nikhil Raj K",
+    name: "Nikhin Raj K",
     role: "Staff Engineer",
     image: nikhinImage,
     linkedin: "https://www.linkedin.com/in/nikhinrajkk/",
