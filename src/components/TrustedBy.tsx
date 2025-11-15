@@ -1,4 +1,10 @@
-const companies = ["Cofee", "Scanpay", "Siren", "Netra", "Mesta"];
+const companies = [
+  { name: "Cofee", url: "https://www.cofee.life/" },
+  { name: "Scanpay", url: "https://www.goscanpay.com/" },
+  { name: "Siren", url: "https://trysiren.io/" },
+  { name: "Netra", url: "https://getnetra.ai/" },
+  { name: "Mesta", url: "https://www.mesta.xyz/" }
+];
 
 const TrustedBy = () => {
   return (
@@ -9,14 +15,17 @@ const TrustedBy = () => {
         </h2>
         <div className="flex flex-wrap justify-center gap-2 sm:gap-4 w-full max-w-6xl">
           {companies.map((company, index) => (
-            <div
+            <a
               key={index}
-              className="bg-card-theme px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-lg sm:rounded-xl flex items-center justify-center min-w-[120px] sm:min-w-[140px] md:min-w-[160px]"
+              href={company.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-card-theme px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-lg sm:rounded-xl flex items-center justify-center min-w-[120px] sm:min-w-[140px] md:min-w-[160px] hover:bg-opacity-80 transition-all duration-200 cursor-pointer"
             >
               <span className="text-sm sm:text-base md:text-lg text-color-primary font-medium whitespace-nowrap">
-                {company}
+                {company.name}
               </span>
-            </div>
+            </a>
           ))}
         </div>
       </div>

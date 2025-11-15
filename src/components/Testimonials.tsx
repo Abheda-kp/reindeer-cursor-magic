@@ -3,62 +3,30 @@ import { TestimonialCard } from "./TestimonialCard";
 const testimonials = [
   {
     author: {
-      name: "Diana Hu",
-      title: "General Partner, Y Combinator",
+      name: "ShamliKhan CP",
+      title: "Technical Lead, ScanPay",
       avatar:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face",
+        "https://ca.slack-edge.com/T4LJBDMDY-U01C9H7PQ9G-9e2d57556587-192",
     },
-    text: "It was night and day from one batch to another, adoption went from single digits to over 80%. It just spread like wildfire, all the best builders were using Cursor.",
+    text: "Reindeer has significantly improved my worflow with databases. Saves me a lot of time in writing & debugging SQL queries. It feels like the perfect 'Cursor for databases",
   },
   {
     author: {
-      name: "shadcn",
-      title: "Creator of shadcn/ui",
+      name: "Aparna Haridas",
+      title: "Engineering Manager, Cofee",
       avatar:
-        "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=150&h=150&fit=crop&crop=face",
+        "https://ca.slack-edge.com/T4LJBDMDY-UMK26FBMW-e07c7ee29d1c-512",
     },
-    text: "The most useful AI tool that I currently pay for, hands down, is Cursor. It's fast, autocompletes when and where you need it to, handles brackets properly, sensible keyboard shortcuts, bring-your-own-model... everything is well put together.",
+    text: "Reindeer is like having an expert SQL developer on call whenever I need it. Much recommended!",
   },
   {
     author: {
-      name: "Andrej Karpathy",
-      title: "CEO, Eureka Labs",
+      name: "Pranav Shridhar",
+      title: "SDE II, Yellow.ai",
       avatar:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+        "https://pbs.twimg.com/profile_images/1262980203229265920/Xm1WX8bA_400x400.jpg",
     },
-    text: "The best LLM applications have an autonomy slider: you control how much independence to give the AI. In Cursor, you can do Tab completion, Cmd+K for targeted edits, or you can let it rip with the full autonomy agentic version.",
-  },
-  {
-    author: {
-      name: "Patrick Collison",
-      title: "Co-Founder & CEO, Stripe",
-      avatar:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face",
-    },
-    text: "Cursor quickly grew from hundreds to thousands of extremely enthusiastic Stripe employees. We spend more on R&D and software creation than any other undertaking, and there's significant economic outcomes when making that process more efficient and productive.",
-  },
-  {
-    author: {
-      name: "ThePrimeagen",
-      title: "@ThePrimeagen",
-      avatar:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
-    },
-    text: [
-      "It's official.",
-      "I hate vibe coding.",
-      "I love Cursor tab coding.",
-      "It's wild.",
-    ],
-  },
-  {
-    author: {
-      name: "Greg Brockman",
-      title: "President, OpenAI",
-      avatar:
-        "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=150&h=150&fit=crop&crop=face",
-    },
-    text: "It's definitely becoming more fun to be a programmer. It's less about digging through pages and more about what you want to happen. We are at the 1% of what's possible, and it's in interactive experiences like Cursor where models like GPT-5 shine brightest.",
+    text: "Night and day difference compared to other database tools. Reindeer has become my goto tool for querying my query",
   },
 ];
 
