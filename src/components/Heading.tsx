@@ -18,10 +18,15 @@ const Heading = () => {
       >
         <div className="space-y-6 sm:space-y-8 lg:space-y-10">
           <div className="space-y-3 sm:space-y-4">
-            <span className="flex flex-row justify-center items-center text-sm sm:text-lg md:text-[22px] leading-snug-custom font-semibold-custom text-color-secondary gap-2 cursor-pointer hover:text-color-primary transition-all duration-300">
+            <a 
+              href="https://www.producthunt.com/products/reindeer?launch=reindeer"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row justify-center items-center text-sm sm:text-lg md:text-[22px] leading-snug-custom font-semibold-custom text-color-secondary gap-2 cursor-pointer hover:text-color-primary transition-all duration-300"
+            >
               <span className="">Product hunt launch 🎉 </span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-            </span>
+            </a>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[100px] leading-snug-custom font-semibold-custom text-color-primary px-2">
               Cursor for Databases.
             </h1>
