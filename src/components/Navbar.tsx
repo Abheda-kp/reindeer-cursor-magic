@@ -81,7 +81,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <button
-                    onClick={() => handleNavClick("setup")}
+                    onClick={() => window.open("https://youtube.com/watch?feature=shared&v=jAdXQA8D3L4", "_blank")}
                     className={headerItemsText}
                     type="button"
                   >
@@ -145,7 +145,7 @@ const Navbar = () => {
               </li>
               <li>
                 <button
-                  onClick={() => handleNavClick("setup")}
+                  onClick={() => window.open("https://youtube.com/watch?feature=shared&v=jAdXQA8D3L4", "_blank")}
                   className={`${headerItemsText} block py-2 text-left w-full`}
                   type="button"
                 >
