@@ -28,7 +28,7 @@ const testimonials = [
       avatar:
         "https://media.licdn.com/dms/image/v2/D4D03AQH7d7eRwtpGgg/profile-displayphoto-scale_200_200/B4DZex9zLJGgAc-/0/1751037459177?e=2147483647&v=beta&t=B7jK0qk7WtuL9asr0ZQVTcSFNsmQFqMgeWgJxTUArNM",
     },
-    text: "Reindeer feels like the future of database work. Fast, intuitive, and extremely helpful for complex queries.",
+    text: "This feels like the future of database work. Fast, intuitive, and extremely helpful for complex queries.\n\nExcited for the launch!",
     href: "https://www.linkedin.com/in/123vivekr/",
   },
   {
