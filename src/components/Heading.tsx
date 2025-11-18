@@ -18,7 +18,7 @@ const Heading = () => {
       >
         <div className="space-y-6 sm:space-y-8 lg:space-y-10">
           <div className="space-y-3 sm:space-y-4">
-            <a 
+            {/* <a 
               href="https://www.producthunt.com/products/reindeer?launch=reindeer"
               target="_blank"
               rel="noopener noreferrer"
@@ -26,7 +26,16 @@ const Heading = () => {
             >
               <span className="">Product hunt launch 🎉 </span>
               <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-            </a>
+            </a> */}
+
+              <a href="https://www.producthunt.com/products/reindeer?embed=true&utm_source=badge-top-post-badge&utm_medium=badge&utm_source=badge-reindeer" target="_blank" className="flex flex-row justify-center items-center text-sm sm:text-lg md:text-[22px] leading-snug-custom font-semibold-custom text-color-secondary gap-2 cursor-pointer hover:text-color-primary transition-all duration-300">
+                <img 
+                  src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=1038650&theme=dark&period=daily&t=1763487740133" 
+                  alt="Reindeer - Cursor for databases | Product Hunt" 
+                  className="w-48 h-auto sm:w-60 max-w-full"
+                  style={{ maxWidth: "100%", height: "auto" }}
+                />
+              </a>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[100px] leading-snug-custom font-semibold-custom text-color-primary px-2">
               Cursor for Databases.
             </h1>
@@ -56,7 +65,7 @@ const Heading = () => {
           }}
         >
           <video
-            src="/videos/Reindeer_Demo_1.mp4"
+            src="https://reindeer.t3.storage.dev/Reindeer_Demo_1.mp4"
             autoPlay
             loop
             muted
